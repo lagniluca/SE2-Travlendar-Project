@@ -1,0 +1,13 @@
+G1: The user can create a meeting
+G2: The system should automatically compute and account for the travelling time between the user's appointment
+G3: The	system	should	also	suggest	travel	means	 depending	on	the	appointment	and	the	day
+G4: The system should allow	 users	 to	 define	 various	 kinds	 of	 user	 preferences.
+G5: The system should	 support	 a	 multitude	of	travel	means 
+(walking, biking, car-sharing, taking public transport, driving,skateboarding,rollers,kick scooter)
+G6:THe system should allow the user	to	activate	each	travel	 means	
+G7: The system should allow the user	to	deactivate	each	travel	means	
+
+
+search info about external systems
+registration
+messaging bout recent accidents
