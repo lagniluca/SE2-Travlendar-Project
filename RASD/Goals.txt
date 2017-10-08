@@ -30,7 +30,7 @@
 
 \item [G14] Ensures the system  provides the user the information about the fastest, the most ecological or the most beautiful routes depending on the user's choice.
 
-\item [G15] Allows the user to avoid overlaps.
+\item [G15] Allows the user to avoid overlaps of his/her meetings.
 
 \item [G16] Provides the user real-time actual information about tickets for the chosen transport.
 
