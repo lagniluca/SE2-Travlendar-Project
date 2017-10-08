@@ -1,0 +1,118 @@
+\textbf{Goals}
+
+\begin{itemize}
+
+\item [G1] Ensures that only the account owner can access his/her cloud services, information about his/her own cars/bikes, calendar, bought tickets, the saved information about previous and frequent trips, if he/she is already registered.
+
+\item  [G2] Computes automatically and accounts for the real travelling time between the user's appointments.
+
+\item  [G3] Provides different  paths that can be reached in a reachable time for the user.
+
+\item [G4] Ensures the user is informed about unreachable paths.
+
+\item [G5] Ensures the schedule of the system will be flexible to delays.
+
+\item [G6] Allows the user to choose the transport means based on the user preferences.
+
+\item [G7] Suggests travel means depending on the user's appointment and the day.
+
+\item [G8] Provides the information about the transport availability.
+
+\item [G9] Allows the user to activate each travel means.	
+
+\item [G10] Allows the user to deactivate each travel means.
+
+\item [G11] Ensures the user is informed about strikes.
+
+\item [G12] Provides the user the time period for lunch.
+
+\item [G13] Ensures the user is informed about transport delays. 
+
+\item [G14] Ensures the system  provides the user the information about the fastest, the most ecological or the most beautiful routes depending on the user's choice.
+
+\item [G15] Allows the user to avoid overlaps of his/her meetings.
+
+\item [G16] Provides the user real-time actual information about tickets for the chosen transport.
+
+\item [G17] Allows the user to create a meeting event.
+
+\item [G18] Reminds the user about the upcoming meeting.
+
+\item [G19] Calculates the average user's walking time dynamically. 
+
+\item [G20] Provides the user the real-time information about location  and status of the nearest car or bar via external car/bike sharing service.
+
+\item [G21] Allows the user to inform about recent or just happened accidents.
+\end{itemize}
+
+
+
+Actors:
+1) User
+2) technical support (admin,operator) of the system
+
+Stakeholders:
+1) owning company
+2) external companies: ATM, Trenit, Google maps, car-sharing services
+3) government?
+
+Resources:
+1)public transport
+
+Glossary
+User
+Meeting
+Mobile app
+Car
+Public transport
+Own ttransport
+Means of transport
+Desktop app
+GPS
+
+
+
+Assumption:
+two users saw the same location of the car and have the opportunity to reserve the car/bike via external car/bike sharing services
+
+
+Interfaces description
+Interface with external staff
+Interface b/w user and system (user and user)
+Interface b/w system and GPS map provider
+                     and external companies API
+                     and technical support
+                     and cloud services
+                     and smart watches
+                     
+ Constraints
+ regulatory policy
+ SW limitations
+ Hw limitations
+ 
+ Frameworks:
+ Rich Internet App (RIA)
+ Xamarin
+ Spring
+ Bootstrap
+ PostGre SQL (noSQL database)
+ 
+ Non functional requirements
+ Usability
+ 1)provide different languages
+ 2)mobile app shall be installable on different OS
+ 3)mobile app shall be working with different browsers
+ 4) push notofocations
+ 5)single frame app
+ 6)trivial info about our project
+ 7)provide interfaces
+ 
+ Performance
+ 
+ Safety
+ 
+ 
+ 
+ 
+ 
+                     

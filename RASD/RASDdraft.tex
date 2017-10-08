@@ -1,0 +1,103 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\title{\textbf{Travlendar}}
+\author{Autori}
+\begin{document}
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section {Introduction}
+
+\subsection{Purpose}
+Travlendar+ is a calendar-based application that allows users to create meetings and computes the time needed for travels between them, identifying the best option. Different means of transport are considered: public transportation, car- and bike-sharing, a personal mean of transport owned by the user, and walking.\\
+The best option is chosen according to a preference criterion expressed by the user, such as the fastest, the most ecological, or the cheapest. The user can also customize his or her travels by setting preferences and constraints about the mean of transport he or she wants to use and activating or deactivating certain options, according to the situation. The application should also take into account any external factors influecing the availability and duration of travels, such as strikes or weather conditions.\\
+Further functionalities of the application are the possibility of reserving a flexible time for lunch and other kind of breaks, according to constraints provided by the user; allow the purchase or public transport tickets; locating the closest vehicle of a car- or bike-sharing system.\\
+The stakeholders involved in the system could be the company owning the application and external companies, such as the ones providing public transportation, vehicle-sharing services, but also weather forecast. The municipality could also be part of the stakholders, as we think this app could be used to improve mobility in an area and help reduce pollution.\\
+Actors involved are the users of the application and techincal support (operators, administrators of the system).
+
+\subsection{Scope}
+\textbf{Goals}
+
+\begin{itemize}
+	
+	\item [G1] Ensures that only the account owner can access his/her cloud services, information about his/her own cars/bikes, calendar, bought tickets, the saved information about previous and frequent trips, if he/she is already registered.
+	
+	\item  [G2] Computes automatically and accounts for the real travelling time between the user's appointments.
+	
+	\item  [G3] Provides different  paths that can be reached in a reachable time for the user.
+	
+	\item [G4] Ensures the user is informed about unreachable paths.
+	
+	\item [G5] Ensures the schedule of the system will be flexible to delays.
+	
+	\item [G6] Allows the user to choose the transport means based on the user preferences.
+	
+	\item [G7] Suggests travel means depending on the user's appointment and the day.
+	
+	\item [G8] Provides the information about the transport availability.
+	
+	\item [G9] Allows the user to activate each travel means.	
+	
+	\item [G10] Allows the user to deactivate each travel means.
+	
+	\item [G11] Ensures the user is informed about strikes.
+	
+	\item [G12] Provides the user the time period for lunch.
+	
+	\item [G13] Ensures the user is informed about transport delays. 
+	
+	\item [G14] Ensures the system  provides the user the information about the fastest, the most ecological or the most beautiful routes depending on the user's choice.
+	
+	\item [G15] Allows the user to avoid overlaps of his/her meetings.
+	
+	\item [G16] Provides the user real-time actual information about tickets for the chosen transport.
+	
+	\item [G17] Allows the user to create a meeting event.
+	
+	\item [G18] Reminds the user about the upcoming meeting.
+	
+	\item [G19] Calculates the average user's walking time dynamically. 
+	
+	\item [G20] Provides the user the real-time information about location  and status of the nearest car or bar via external car/bike sharing service.
+	
+	\item [G21] Allows the user to inform about recent or just happened accidents.
+\end{itemize}
+
+\subsection{Definitions, acronyms, abbreviations}
+\begin{itemize}
+	\item User: a person utilizing the service provided by the application. Users have the possibility to compute the travel time between two places also without logging in, but they need to register to use all the functionalities of the application.
+	\item Meeting: any appointment created by the user. They can be of different nature: related to business, amusement, family time... They are characterized by a starting time, duration, location and optional notes.
+	\item Mobile application: the application the user has to install on his or her mobile phone, or other device, in order to use the service.
+	\item Mean of transportation: any mean that allows the user to go from one location of another. Different kinds are included:
+	\begin{itemize}
+		\item public transportation: buses, trams, underground, trains
+		\item taxis
+		\item vehicle-sharing services: cars, bikes, motorbikes
+		\item own vehicles: cars, bikes, motorbikes 
+	\end{itemize}
+Walking is also considered as a mean of transportation.
+	\item Desktop application
+	\item Reservation
+	\item System
+	\item Service
+\end{itemize}
+\subsection{Revision history}
+\subsection{Reference documents}
+\subsection{Document structure}
+\newpage
+
+\section {Overall Description}
+\newpage
+\section{Specific requirements}
+\newpage
+\section{Formal analysis using Alloy}
+\newpage
+\section{Effort spent}
+\newpage
+\section{References}
+\end{document}
