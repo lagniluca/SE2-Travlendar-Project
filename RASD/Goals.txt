@@ -14,13 +14,13 @@
 
 \item [G6] Allows the user to choose the transport means based on the user preferences.
 
-\item [G7] Suggests	travel	means depending	on	the user's	appointment	and	the	day.
+\item [G7] Suggests travel means depending on the user's appointment and the day.
 
-\item [G8] Provides  the information about the transport availability.
+\item [G8] Provides the information about the transport availability.
 
-\item [G9] Allows the user	to activate each travel	 means.	
+\item [G9] Allows the user to activate each travel means.	
 
-\item [G10] Allows the user	to deactivate each travel means.
+\item [G10] Allows the user to deactivate each travel means.
 
 \item [G11] Ensures the user is informed about strikes.
 
