@@ -1,25 +1,50 @@
-G1: The user can create a meeting
-G2: The system should automatically compute and account for the travelling time between the user's appointment
-G3: The	system	should	also	suggest	travel	means	 depending	on	the	appointment	and	the	day
-G4: The system should allow	 users	 to	 define	 various	 kinds	 of	 user	 preferences.
-G5: The system should	 support	 a	 multitude	of	travel	means 
-(walking, biking, car-sharing, taking public transport, driving,skateboarding,rollers,kick scooter)
-G6:THe system should allow the user	to	activate	each	travel	 means	
-G7: The system should allow the user	to	deactivate	each	travel	means	
-G8:arrive
-G9: registration - access to cloud services,own cars/bikes, calendar, buy tickets, save info about previous and frequent trips
-G10: Warning - delay
-G11: ensure that the user is informed about strikes, transport delays and current costs
-G12: system  provides user the info about the fastest mravel means, the most ecological, the most beautiful
-G13: computes an real accept time
-G14: Lunch
-G15: ensure that there is no overlap and reminder
-G16: provide user the ticket information
-G17: ensure the user is informed about location and status of the nearest car or bike
+\textbf{Goals}
 
-search info about external systems
-registration
-messaging bout recent accidents
+\begin{itemize}
+
+\item [G1] Ensures that only the account owner can access his/her cloud services, information about his/her own cars/bikes, calendar, bought tickets, the saved information about previous and frequent trips, if he/she is already registered.
+
+\item  [G2] Computes automatically and accounts for the real travelling time between the user's appointments.
+
+\item  [G3] Provides different  paths that can be reached in a reachable time for the user.
+
+\item [G4] Ensures the user is informed about unreachable paths.
+
+\item [G5] Ensures the schedule of the system will be flexible to delays.
+
+\item [G6] Allows the user to choose the transport means based on the user preferences.
+
+\item [G7] Suggests	travel	means depending	on	the user's	appointment	and	the	day.
+
+\item [G8] Provides  the information about the transport availability.
+
+\item [G9] Allows the user	to activate each travel	 means.	
+
+\item [G10] Allows the user	to deactivate each travel means.
+
+\item [G11] Ensures the user is informed about strikes.
+
+\item [G12] Provides the user the time period for lunch.
+
+\item [G13] Ensures the user is informed about transport delays. 
+
+\item [G14] Ensures the system  provides the user the information about the fastest, the most ecological or the most beautiful routes depending on the user's choice.
+
+\item [G15] Allows the user to avoid overlaps.
+
+\item [G16] Provides the user real-time actual information about tickets for the chosen transport.
+
+\item [G17] Allows the user to create a meeting event.
+
+\item [G18] Reminds the user about the upcoming meeting.
+
+\item [G19] Calculates the average user's walking time dynamically. 
+
+\item [G20] Provides the user the real-time information about location  and status of the nearest car or bar via external car/bike sharing service.
+
+\item [G21] Allows the user to inform about recent or just happened accidents.
+\end{itemize}
+
 
 
 Actors:
