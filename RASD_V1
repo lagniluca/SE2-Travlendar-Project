@@ -1,0 +1,156 @@
+\documentclass[a4paper]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{amsmath}
+
+\begin{document}
+
+\date{2017/10/09}
+\author{Bolshakova Liubov\\ Campagnoli Chiara\\ Lagni Luca}
+\title{RASD}
+\frontmatter                            % only in book class (roman page #s)
+\maketitle                              % Print title page.
+\tableofcontents                        % Print table of contents
+\mainmatter   
+
+\part{Introduction}
+
+\chapter{Pourpouses}
+In this chapter we will deline all the goals that we have extract from our text and the actors that take part
+in the system and the environment of our application.
+
+\section{Goals}
+
+\begin{itemize}
+
+\item (G01): The system must allow the client to sign up, login and logout.
+\item (G02): The system must allow the client to access to his private data.
+\item (G03): Every client can decide what path to do, inside a city or a region.
+\item (G04): Every client can decide what mean of transports would take, according to the ones provided by the software.
+\item (G05): Every client can decide the range of time to reserve for breaks. 
+\item (G06): The system must comunicate to the client that a path (selected by this one) is not reachable.
+\item (G07): Ensures that only the real designed user, if properly registred, can access to his private account.
+\item (G08): The system must provide all the possible path that can be taken by a client, according to his/her needed.
+\item (G09): The system must leave the client free to define a delay , according to his needed.
+\item (G10): The system must provide the most optimized and suitable solution , according to the client constraint, as first suggested path.
+\item (G11): The system must provide informations about problems/strikes for all the means of transports included in the software.
+\item (G12): The system must warning the client of weather problems concerning some means of transport.
+\item (G13): The system should allow user to comunicate each others for possible problems in the path selected.
+\item (G14): The system must warning the client about delays on travel means.
+\item (G15): The system must provide a way to permit to a single client to buy a ticket for public transports.
+\item (G16): The system must provide the nearest location of a bike provided by a bike sharing service provider included in the software.
+\item (G17): The system must provide the nearest location of a car provided by a car shering service provider included on the software.
+\item (G18): The system must avoid overlaps in client's scheduled travels.
+\item (G19): The system must allow the client to create different types of meeting (at least, business meetings).
+\item (G20): The system must warning the user about upcoming meetings.
+\item (G21): The system must memorize paths (locally for occasionally clients, remotly for registred users).
+\item (G22): The system must allow the user to delete a path.
+\item (G23): The system should calculate automatically the average speed of a client.
+\item (G24): The system should calculate automatically a predicted delay of the client , based on the average speed.
+\item (G25): The system should ignore all data about predicted arrived time , based on average speed, superior that half an hour .
+\item (G26): The system must provide an alternative path in case of problems along the path selected.
+\item (G27): In case of registred system, for whose that perform multiple time a specific path in a specific range of thim, the system must provide this meeting as first when the app is open by the client in that range of time.
+\item (G28): The system must provide a way to print maps and instructions for desktop mode.
+\item (G29): The system must interface for wearable devices, providing maps or , at least , messagges.
+
+\end{itemize}
+
+\section{Actors}
+\begin{itemize}
+
+\item (A01): User - A generic actor that is not registred yet.
+\item (A02): Client - Actor whose pourpouse is to use the app and it's registred.
+
+\end{itemize}
+
+\section{Stakeholders}
+\begin{itemize}
+
+\item (S01): Owing compaany - Obviously, the company itself is a stakeholder
+\item (S02): External companies - Companies like ATM, Trenitalia, Google ...
+
+\end{itemize}
+
+We can assume that another possible stakeholder could be the city (or region) itself because the local comunity can be interested in invest resources for reduce traffic and pollution.\\
+
+At a higer level, for the same reasons , another possible stakeholder could be the governament (for the same reasons exposed before).
+
+\section{Scope}
+
+The applications requires a coverage of a city of a region but it doesn't specify which one so , we have to assume that this application should be able to manage his duty for any city or region of Italy (this is a limitation that we had to implement because it could be very hard to manage all public transport of the whole World).\\
+This application purpouse is to aim clients for short travels, so we limited our means of transport in:
+
+\begin{itemize}
+
+\item (M01): Feet 
+\item (M02): Personal bike 
+\item (M03): Personal car
+\item (M04): Other autonomous personal means of transport
+\item (M05): Other non autonomous personal means of transport
+\item (M06): Bike provided by a bike sharing provider, if available
+\item (M07): Car provided by a car sharing provider, if available
+\item (M08): Other non autonomoys means of transport
+\item (M09): Other autonomous means of transport
+\item (M10): Trains
+\item (M11): Trams
+\item (M12): Bus 
+\item (M13): Taxi
+\item (M14): Boat (for cities like Venice).
+
+\end{itemize}
+
+We can escude planes, because of the nature of the travels considered.\\
+
+Other autonomous personal means of transport can be everything that has an engine like motorcycles , quad, segway ...\\
+
+Other non autonomous personal means of transport can be everything, used for move from one place to another, that hasn't an engine like rollerblade, skateboards ...\\
+
+Other non autonomous means of transport can be tandems ... \\
+
+Other autonomous means of transport can be rented vehicles like motorcycles , cars not provided by a carsharing but also hichkicking and so on ... \\
+
+For all the "other [...] means of transport" we don't provide a specialized definition, we only focus of maximum speed, euro class and possible special access/limitations (like for veichles disposed for disable people), that we assume mandatory (the client must provided this kind of informations if he intended to use this kind of veichles), if the user want to properly use this application, and we leave the possibility to enrich informations about other important things of that mean of transport to the user it self.\\ 
+
+The client's scope is tought as limited and personal , we haven't provided group solutions (like trips for schools or something like that).
+
+\part{Overall Description}
+
+\chapter{Domain Guide Lines}
+In this chapter we will deline all those aspects that can be used to model our application for a future implementation
+
+\section{Product Functions}
+Here we include the most important requirements of our software
+
+\begin{itemize}
+
+\item (F01): The software must be accessed on all majors mobile devices that runs Android Os, iOS and Windows Phone.
+\item (F02): The software must be accessed on all major desktop OS like Windows (7 or later), MacOsX (10.8 or later) and Linx (Debian, RedHat and Suse like distros).
+\item (F03): The software should allow the user to sign in (useful for profiling).
+\item (F04): The software should allow the user to log in.
+\item (F05): The software should allow the user to log off.
+\item (F06): The software should allow the user to delete his account
+\item (F07): The software must allow even anonymous users (user that doesn't sign in) to use the application.
+\item (F08): The software must be used also in a non navigator mode by allowing the user to print a map.
+\item (F09): The software must interface with all major public transport companies that provides API.
+\item (F10): The software must allow the user to define a path.
+\item (F11): The software must allow the user to define a journey (a path with some breaks).
+\item (F12): The software must allow the user to define time constraint to a specific selected path/journey.
+\item (F13): For each path/journey the software must provide all the available means of transport that can be used, according to the software interfaces.
+\item (F14): The software must allow the user to select veichles that he/she wants to use to do the travel.
+\item (F15): The software must warning if some part of the path pass through a risk zone.
+\item (F16): The software must allow the user to define breaks inside of his journey.
+\item (F17): For each break, the software must require the estimated time.
+\item (F18): For clients, the software must provide a way , if possible, to allow the user to do a specific path according to his tastes (for examples, pass in a storic street or in a shopping district if possible).
+\item (F19): If a journey or a break is not possible , the software must inform the user.
+\item (F20): The system must provide a way to define a possible delay (e.g. for business meetings 5 miutes, for family reunion 30 minutes ...).
+\item (F21): The software must provide all the available solutions, according to its setups, to carry the user from a place to another.
+\item (F22): In case of breaks, if they become too long (they reach the final time defined), the software must warning the user.
+ 
+
+\end{itemize}
+
+\end{document}
+
