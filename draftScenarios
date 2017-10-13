@@ -29,7 +29,14 @@ S6) User has created five meetings today
     User can have 30 minutes of lunch at 13.20
     -------------> warnign should be sent if not possible
     
-    
+S7)User has added "lunch" spot
+
+S8) User creates the meeting
+    App suggests him different types of way
+    User choose the bike-sharing way
+    App shows the nearest bikes location 
+    User chooses the bike location
+    App transfers him to bike-sharing service 
     
     
     
