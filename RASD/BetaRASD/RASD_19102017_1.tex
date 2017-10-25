@@ -1,0 +1,441 @@
+\documentclass[a4paper]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{amsmath}
+
+\begin{document}
+
+\date{2017/10/09}
+\author{Bolshakova Liubov\\ Campagnoli Chiara\\ Lagni Luca}
+\title{Requirement Analysis and Specification Document}
+\frontmatter                            % only in book class (roman page #s)
+\maketitle                              % Print title page.
+\tableofcontents                        % Print table of contents
+\mainmatter   
+
+\part{Introduction}
+
+\chapter{Purposes}
+In this chapter we will decline all the goals that we have extract from our text and the actors that take part in the system and the environment of our application.
+
+\section{Goals}
+
+\begin{itemize}
+\item (G01): The software should allow the user to register.
+\item (G02): Every user can decide what path to do, inside a city or a region.
+\item (G03): Every user can decide what mean of transports would take, according to the ones provided by the software.
+\item (G04): Every user can decide the range of time to reserve for breaks. 
+\item (G05): The system must comunicate to the user that a path (selected by this one) is not reachable or it's out of time.
+\item (G06): The system must provide all the possible path that can be taken by a user, according to his/her needed.
+\item (G07): The system must provide the most optimized and suitable solution , according to the user constraint, as first suggested path.
+\item (G08): The system must provide informations about problems/strikes for all the means of transports included in the software.
+\item (G09): The system must warning the user of weather problems concerning some means of transport.
+\item (G10): The system must provide a way to permit to a single user to buy a ticket for public transports.
+\item (G11): The system must provide the nearest location of a bike provided by a bike sharing service provider included in the software.
+\item (G12): The system must provide the nearest location of a car provided by a car shering service provider included on the software.
+\item (G13): The system must avoid overlaps in user's scheduled travels.
+\item (G14): The system must allow the user to create different types of meeting (at least, business meetings).
+\item (G15): The system must warning the user about upcoming meetings.
+\item (G16): The system must allow the user to delete a path.
+\item (G17): The system must provide an alternative path in case of problems along the path selected.
+\item (G18): The system must interface for wearable devices, providing maps or , at least , messagges.
+\item (G19): The software should show to each user, if possible, the the combination of means of transport that minimize the carbon footprint, according to the path selected and the required time.
+
+\end{itemize}
+
+\section{Scope}
+\subsection{Description of the given problem}
+Travlendar+ is a management service-to-be that allows users to plan their meetings and make  arranged routes to their destinations. The given problem is to design, implement and test a calendar-based application for it.
+A user can create an appointment on a certain date, time and reachable location (over a region) using GPS localization. The appointment can be held either at a specific time or in a time interval and last for a certain time period. An appointment can be repeated regularly over time (lunch, gym, taking children to a kindergarten). A User can travel with someone else and can meet or leave them during the day.
+
+User has an opportunity to use his own travel means and a pass for public transportation. According to this the travel means can be grouped in three categories: public, shared or private.
+
+\begin{itemize}
+	\item Public travel means: include trains, buses, underground, taxis, trains. They have to be taken in their designated stops. User must have a valid ticket in order to take any public travel mean but taxis (do not require tickets). Otherwise a User must have an availability to buy a ticket, update his/her pass or pay for a taxi trip on-line with his/her credit card;
+	\item Shared travel means: include car and bike. They are located in specific places and require to make a reservation for using them;
+	\item Private travel means: vehicles owned by the User. They can be cars, bikes, motorcycles. Walking is also a private travel means.
+\end{itemize}
+
+Weather conditions can change during the day. A User can find out the actual information about the latest weather conditions during his/her planned meeting and choose more comfortable way to reach his/her final destination.
+
+In the morning or on demand a User can send a request about the schedule of his/her daily appointments by some criteria of evaluation such as assigned priority and satisfaction of constraints imposed by the User. When a new appointment is made, a User creates a new item in the application and saves it in the appointment list. User can require the application rescheduling meetings because of unexpected changes (e.g. cancelled or postponed meeting). User always know how long it takes to get his/her final destination. 
+
+A green and ecological approach is the core of Travlendar+ business and according to this a lot of details have been defined:  the application firstly suggests the most ecological path to a User (e.g. path with walking or using public transport means, a bike instead a car) to minimize carbon footprint. 
+Ultimately, the system will have to be easy-to-use, reliable and highly scalable to fit perfectly  with the mutable context in which it will be planned to be used.
+
+
+\subsection{World phenomena}
+
+\begin{itemize}
+	\item User receives a new meeting;
+	\item User meets another person;
+	\item User leaves another person:
+	\item User has private travel means and/or passes for public transportation;
+	\item User gets up;
+	\item User's pass expires; 
+	\item There are available various travel means.
+\end{itemize}
+
+\subsection{Shared phenomena}
+
+\begin{itemize}
+	\item Shared travel mean moves;
+	\item User moves;
+	\item Shared travel mean is not available;
+	\item Weather condition changes;
+	\item Public travel mean reaches its final stop;
+	\item Public travel means are not available due to a strike or an accident;
+	\item User requires a timetable of the necessary public transport route;
+	\item User inserts a new appointment into the calendar;
+	\item User buys a ticket or a pass for the necessary public travel mean;
+	\item User requires booking his/her ride.	 
+\end{itemize}
+
+\section{Actors}
+\begin{itemize}
+
+\item (A01): User - A generic actor that uses the application
+\item (A02): Visitor - A user that it's not registred yet
+\item (A03): Client - A Registred user
+\item (A04): Techical Support - Actor that aid the user in case of techical problems with the app.
+
+\end{itemize}
+
+We have done a distinction between Client and Visitor because we think that , one day, \\
+it will be usefull , for our application, to evolved and a special treatment for making the \\
+user fidelity stronger will be desiderable or required.\\
+
+Anyway, at this stage , there are no difference in features between a visitor and a client\\
+so, if not necessessary, we will refer to them as users.
+
+\section{Agents}
+
+This application purpouse is to aim clients for short travels, so we limited our means of transport in:
+
+\begin{itemize}
+
+\item (M01): Feet 
+\item (M02): Personal bike 
+\item (M03): Personal car
+\item (M04): Other autonomous personal means of transport
+\item (M05): Other non autonomous personal means of transport
+\item (M06): Bike provided by a bike sharing provider, if available
+\item (M07): Car provided by a car sharing provider, if available
+\item (M08): Other non autonomoys means of transport???
+\item (M09): Other autonomous means of transport
+\item (M10): Trains
+\item (M11): Trams
+\item (M12): Bus 
+\item (M13): Taxi
+\item (M14): Boat (for cities like Venice).
+
+\end{itemize}
+
+We can exclude planes, because of the nature of the travels considered.\\
+
+Other autonomous personal means of transport can be everything that has an engine like motorcycles , quad, segway ...\\
+
+Other non autonomous personal means of transport can be everything, used for move from one place to another, that hasn't an engine like rollerblade, skateboards ...\\
+
+Other non autonomous means of transport can be tandems ... \\
+
+Other autonomous means of transport can be rented vehicles like motorcycles , cars not provided by a carsharing but also hichkicking and so on ... \\
+
+For all the "other [...] means of transport" we don't provide a specialized definition, we only focus of maximum speed, euro class and possible special access/limitations (like for veichles disposed for disable people), that we assume mandatory (the client must provided this kind of informations if he intended to use this kind of veichles), if the user want to properly use this application, and we leave the possibility to enrich informations about other important things of that mean of transport to the user it self.\\ 
+
+
+\section{Stakeholders}
+\begin{itemize}
+
+\item (S01): Owing compaany - Obviously, the company itself is a stakeholder
+\item (S02): External company - A general external company that provides means of transport or services.
+\item (S03): Google
+\item (S04): ATM
+\item (S05): Mobike 
+\item ...
+
+\end{itemize}
+
+We can assume that another possible stakeholder could be the city (or region) itself because the local comunity can be interested in invest resources for reduce traffic and pollution.\\
+
+At a higer level, for the same reasons , another possible stakeholder could be the governament (for the same reasons exposed before).
+
+\section{Scope}
+
+The applications requires a coverage of a city of a region but it doesn't specify which one so , we have to assume that this application should be able to manage his duty for any city or region of Italy (this is a limitation that we had to implement because it could be very hard to manage all public transport of the whole World).\\
+
+The client's scope is tought as limited and personal , we haven't provided group solutions (like trips for schools or something like that).
+
+\part{Overall Description}
+
+\chapter{Domain Guide Lines}
+In this chapter we will deline all those aspects that can be used to model our application for a future implementation
+
+\section{Product Functions}
+Here we include the most important requirements of our software
+
+\begin{itemize}
+
+\item (F01): The system must allow users to sign in
+\item (F02): The system must allow the client to login in
+\item (F03): The system must allow the client to log out
+\item (F04): The system must allow the client to delete his account.
+\item (F05): The system must provide an high level of security for client's data.
+\item (F06): The software must be accessed on all majors mobile devices that runs Android Os, iOS and Windows Phone.
+\item (F07): The software must interface with all major public transport companies that provides API.
+\item (F08): The software must allow the user to define a journey.
+\item (F09): The software must allow the user to define time constraint to a specific selected journey.
+\item (F10): For each journey the software must provide all the available means of transport that can be used, according to the software interfaces.
+\item (F11): The software must allow the user to select veichles that he/she wants to use for the journey.
+\item (F12): The software must require the estimated time for each break of the journey.
+\item (F13): If a journey is not possible because of possible overlaps with other journeys, the application must deny that option and notify the user.
+\item (F14): If a journey is not possible because the required time to reach the destination is not enough, the application must deny that option and notify the user.
+\item (F15): If a journey is not possible because a mean of transport selected by the user is not allowed to pass in a specific place, the application must deny that option and notify the user.
+\item (F16): If a journey is not possible because breaks requires too much time, the application must deny that option and notify the user.
+\item (F17): The software must provide all the available solutions, according to its setups, to carry the user from a place to another.
+\item (F18): The software must aware the user about problems concerning the use of some means of transport (for strkes , road damages, rain ...) for which the usability is not guarantee.
+\item (F19): The application should provide, as first option, the optimal solution according to the choices of the user (including preferences about pollution).
+\item (F20): The application must be able to carry the user from the initial locality to the final one.
+\item (F21): If a break runs out the time selected the application must notify the user.
+\item (F22): The application should avoid to make the user pass trough danger zones of a city or region.
+\item (F23): If the user has to pass trough a danger zone, the application must aware him.
+\item (F24): In case of wearable devices setted , the application must notify the user also via that device.
+
+\end{itemize}
+
+\chapter{Specific Requirements}
+
+\part{External Interface Requirements}
+
+\section{User Interfaces}
+The section above shows the main interfaces between the user and the app 
+\begin{itemize}
+\item (UI01): The user has to interface with the journey setter of the app
+\item (UI02): The user has to interface with the navigator of the app.
+\item (UI03): The user has to be allowed to interface with the technical support.
+\item (UI04): The user has to be allowed to interface with the means of transport selection of the app.
+\item (UI05): The user has to be allowed to interface with external companies book methods via the app.
+\end{itemize}
+
+And, more , the application must provide support for disable users like:
+\begin{itemize}
+
+\item (UI07):Support for users that have low level limitations and, because of this condition, cannot access the application in the standard way (like people with low vision disease). 
+\item (UI08):Support for users that have high level limitation and , because of that, cannot use specific means of transport (like old people or people with movements limitation).
+
+\end{itemize}
+
+\section{Software Interface}
+This section shows the main interfaces between the application and the software provided by the user/client's device.
+
+\begin{itemize}
+\item (SI01): The application must interface with the localization device disposed by the client/user's device.
+\item (SI02): The application must interface with the system notification of the client/user's device.
+\item (SI03): The application must interface with the standard I/O ways of interaction of the client/user's device.
+\item (SI04): The application, in case of wearable device, must interface with the wearable device's notification system.
+\item (SI05): The application should interface with the system watch of the client's device.
+\item (SI06): The application should interface with the language selection of the system.
+\item (SI07): The application must provide, in addition to the standard GUI, a low and high contrast mode. 
+\item (SI08): The application must interface with external compalies API (those who are comtempled), in order to provide a way to access to transport's data.
+\end{itemize}
+
+\section{Hardware Interfaces}
+This section shows the main interfaces between the software or client/user or application and the hardware of the client/user's device
+
+\begin{itemize}
+\item (HI01): The client's device must access to the Internet.
+\item (HI02): The client's device must manage geolocalization. 
+\end{itemize}
+
+\section{Communication Interfaces}
+
+\begin{itemize}
+\item (MI01): The system must have a TCP/IP protocol.
+\item (MI02): The system must have a way to manage the GSM protocol.
+\item (MI03): In case of wearable devices , the system must have a way to manage the bluetooth protocol.
+\item (MI04): The user device must have a way to manage 3G or wi-fi protocols.
+\item (MI05): The user's device must have an I/O interface (like touch screens).
+\item (MI06): The communication between application and the user must have a Restful way .
+\end{itemize}
+
+\part{Functional Requirements}
+
+\section{Scenarios}
+In this section we provide some possible situations that can occours during the use of our application.
+
+\subsection{Scenario (S01) }
+Albert has an important work meeting in Milan.\\
+This meeting could provide a new customer to his company, so he has to do a good impession, arriveing in time.\\
+He arrived by train at 8.00 in the moring and the meeting is scheduled for 11.15, there is a lot of time , because 
+the company is near the station, but he doesn't know where to go.\\
+He is already a client of our app, because he travels a lot for work.\\
+He set up the initial point (using his current position) and the arrival point.\\
+The path is very short, and there are no car/bike sharing during the path (the application doesn't provide them) , but he doesn't go by foot for no swear,\\
+so he disabe le foot option and decide to use the bus, which come closer to his arrival.\\
+The application provide a link connection to the ATM site for reserving a ticket, and he use it.
+The total time of the travel it's 30 minutes so he decided what to do during this time interval.
+He seen that there is a library near the company, it's only 5 minutes by foot , so he decide to set a break here that longs 3h, for review his presentation,\\
+but this breaks requires too much time and , because of this, the softesre doesn't allow him, so he has to change it in only 2h.
+There are no problems during the path and arrived at the library at 8.40.\\
+At 10.40 the alarm related to the break provided by the app ring , so he decide to exit from the library and go to the company building.\\
+Here he disable the app.
+
+\subsection{Scenario (S02) }
+Brigitte is a french tourist that decided to visit Venice.\\
+She's at the airport right now and she wants to go to her hotel .\\
+This is her first time in Italy so he looks in the play store and find out our app.\\
+She doesn't travel very often , sho she decided to use the app as visitor.\\
+First of all, she decided to set only the hotel for leave her luggages.\\
+She sets that application, she only set public and proprietary means of transport.\\
+She decided to use the bus (for the first part of the journey) to reach the hotel and 5 minutes by foots.\\
+She doesn't set any breaks and require an path time of 1h.\\
+After she has arrived to the hotel, she decided to visit Piazza San Marco, Palazzo Ducale and Ponte di Rialto in her first day.\\
+She has all the day, but she has to come back to the hotel before 2 A.M.\\
+Her first place will be Piazza San Marco, which is not so distant from his hotel , so she setted the feet option.\\
+Once she was here, she setted as next place Palazzo Ducale  and a break of 1.30h for enjoying Piazza San Marco.\\
+For Palazzpo Ducale there are only four means of transport suitable: feet, car sharing, bike sharing and taxis, because there is a bus strike.\\
+She decided to take a taxi,but she doesn't call it because she has time,  she wants to relax and take it easy , she's on holiday after all.\\
+After 1.30h the alarm ring, but she changed her mind , she decided to go there using the bike sharing (because she take a Cappuccino and a Croissan at piazza San Marco and she had to paid 20 euro, so she decided to save money).\\
+Our application provides to her an external reference to the Mobike application that shows her the nearest available bike and how to unlock it.\\
+She does so  and went to Palazzo ducale.\\
+She arrived at 4.00 and and decided to set a journey to ponte di Rialto via Gondola (using a boat) , the last available will be at 5.15, so she setted the required time to arrive here on bike and a 30 minute break.\\
+But her breaks required too much time, and she ignore the application notification.\\
+So, now, he has to arrive there in only 10 minutes , the only possible solution is the taxi and she has to do so.\\
+Our application doesn't has a direct access to the API of the taxi provider because their're not been released yet but she can call a taxi using our link to the taxi site and then , using the contact provided, call for a taxi reservation.\\
+She did so.\\
+She bought the ticke for the boat directly there.\\
+The tour finished at 18.30.\\
+She then decided to go to a Disco, and set the arrival time at 23.00.\\
+There available only taxis, bike sharing and car sharing but , if she wants to use a car, she has to pass through a risk zone, so she decided to rent a car.\\
+Then she decided to eat someting and visit some shops there.\\
+She delayied her departure and the application said to her that there are no available solutions for arriving on time.\\
+She only exit from the app.\\
+Then , at 1.30 she setted the path to come back to the hotel, without any breaks and select the car as means of tranport.\\
+Once she arrived at the hotel , she disabled the app.\\
+
+\subsection{Scenario (S03) }
+Carl has to marry , her future wife (Denise) has decided the place where to do so.\\
+She is from Mantova and he is from Sicily (like all his parents and friends).\\
+Denise lived in Mantova since she was 23 and then she decided to move to Sicily where she met Carl, her family is in Mantova and, sometimes she goes to find them (and of course knows the city) but Carl has never been there.
+So, Carl is in big troubles because he only has 30 minutes to reach Santuario della Beata vergine delle Grazie from the train station of Mantova and, of course, he has to find a way to carry also all his family and friends (which are , at last 30).
+So he, in a hurry , decides to download the app and use it as a visitor.\\
+He sets the journey without breaks and there are no public possible solutions that can be adapted, and there is only one possible proprietary solution that provide API : to call a taxi.\\
+This is a problem because for carrying all his parents and friends it will require at least 5 taxis.\\
+But there is another option , provided by an external company , which rent bus.\\
+The company doesn't provides any api, but it provides a link for their site in which there are all their contacts.\\
+This is the way he used our app, we don't know if he can accomplish his mission , we can suppose so by the fact that he doesn't used the app anymore for that day.\\
+We pray for you Carl!\\
+
+\part{Non Functional Requirements}
+
+\section{Performance Requirements}
+\begin{itemize}
+\item (PR01): The application should calculate the path in the minimum time required.
+\item (PR02): The application should use the minimum RAM space required.
+\item (PR03): The application should use the minimum disk space required.
+\item (PR04): The application GUI should be fluid.
+\end{itemize}
+
+\section{Design Constraints}
+\subsection{Standard compliance}
+\begin{itemize}
+\item (SR01): The application must provide multiple languages settings (at last, English and Italian).
+\item (SR02): The application should provide facilities for disable users (like High/low contrast GUI ...).
+\item (SR03): The application should reserve the majority of the screen to the travel form in case of journey setup.
+\item (SR04): The application should reserve the majority of the screen to the navigator in case of navigation mode.
+\item (SR05): All the informations that are not important in a certain moment must be stored in menus.
+\item (SR06): The link for external companies must be stored in the external company area inside our application.
+\item (SR07): The warnings must occupy the less screen space required when they don't cause a delay that can minate the journey.
+\item (SR08): The warnings must occupy the entire screen space required when they cause an excessive delay.
+\end{itemize}
+\subsection{Hardware Limitations}
+\begin{itemize}
+\item (HL01): We must provide the best GUI according to the user settings and user's device.
+\item (HL02): If the user's device doesn't allow some settings we cannot know it .
+\end{itemize}
+\subsection{Any Other Constraints}
+\begin{itemize}
+\item (OC01): The application must not blink for no causing epilectic disease.
+\item (OC02): The application fonts must be big enought to be read by the user.
+\end{itemize}
+
+\section{Software System Attributes}
+
+\subsection{Reliability}
+\begin{itemize}
+\item (RR01): The application must be able to calculate alternatives in case of problems during the journey
+\item (RR02): The application should retrive the most updated infos from the external sites.
+\item (RR03): The application should run in every mobile device with a screen with minimum requirements according to the OS of the device.
+\item (RR04): In case of excessive delays the application should provide an alternative.
+\item (RR05): The application should mantain the last status in case of exit unespected from the application.
+\item (RR06): The application should run also in case of non full screen mode.
+\end{itemize}
+
+\subsection{Availability}
+\begin{itemize}
+\item (AR01): The application must be able to work when the Internet connection is established.
+\item (AR02): The application must be able to work when it's running.
+\item (AR03): The application must be able to work whit all the setting provided.
+\item (AR04): The application must be able to reschedule paths in case of problems.
+\end{itemize}
+
+\subsection{Security}
+\begin{itemize}
+\item (SR01): The journey setted by a user must be visible only by the user itself.
+\item (SR02): The private area of a client should be available only fot the client itself.
+\item (SR03): The data stream from the application and the user's device must be encripted.
+\item (SR04): Every user must have a dedicated thread, not shared with other users.
+\item (SR05): The application should not manage too sensible user's data.
+\end{itemize}
+
+\subsection{Maintainability}
+\begin{itemize}
+\item (MR01): The software must use as much as possible interfaces in order to have a "contract" for future features.
+\item (MR02): The software must use the standard Java version (8.0 or later).
+\item (MR03): The external libraries must be provided by external big companies (like Google, Twitter ...)
+\item (MR04): The software releases must be provided with documentation related.
+\item (MR05): The software must be commented in all the important parts using JavaDocs comments.
+\item (MR06): All the public aspects of the software must be available in every next versions (if necessessary they can be deprecated but not deleted).
+\end{itemize}
+
+\subsection{Portability}
+\begin{itemize}
+\item (PR01): The application should use Java only server side.
+\item (PR02): The application should use less native languages as possible.
+\item (PR03): The application should rely on standards (HTML5, CSS, JSon ...)in order to provide almost the same user experience in all the possible devices.
+\end{itemize}
+
+\chapter{Other Infos}
+
+\part{Effort Spent}
+
+\section{Bolshakova Liubov}
+\begin{itemize}
+\item (2017/10/08 - 7.00h) : Studyied the assignments, delined main parts , defined some Section 1,2 e 3 requirements.
+\item (2017/10/12 - 1.00h) : Revision of the goals 
+\item (2017/10/13 - 2.00h) : Improvement of the RASD, definition of group's standards and repository account redesign.
+\item (2017/10/19 - 1.30h) : Scope part, analysis of shared and world phenomena.
+\end{itemize}
+
+\section{Campagnoli Chiara}
+\begin{itemize}
+\item (2017/10/08 - 7.00h) : Studyied the assignments, delined main parts , defined some Section 1,2 e 3 requirements.
+\item (2017/10/12 - 1.00h) : Revision of the goals 
+\item (2017/10/13 - 2.00h) : Improvement of the RASD, definition of group's standards and repository account redesign.
+\end{itemize}
+
+\section{Lagni Luca}
+\begin{itemize}
+\item (2017/10/08 - 7.00h) : Studyied the assignments, delined main parts , defined some Section 1,2 e 3 requirements.
+\item (2017/10/09 - 1.00h) : Created a tex RASD, writed down a first instance of section 1 and 2
+\item (2017/10/11 - 1.30h) : writed down a fist instance of section 3 concerning instances
+\item (2017/10/12 - 1.00h) : Revision of the goals 
+\item (2017/10/13 - 2.00h) : Improvement of the RASD, definition of group's standards and repository account redesign.
+\item (2017/10/17 - 2.00h) : Implemented the non functional requirement section
+\item (2017/10/18 - 2.00h) : Added three scenarios (S1, S2, S3)
+\end{itemize}
+
+\end{document}

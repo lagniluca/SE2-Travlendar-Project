@@ -1,0 +1,217 @@
+\documentclass[a4paper]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+\usepackage{amsmath}
+
+\begin{document}
+
+\date{2017/10/09}
+\author{Bolshakova Liubov\\ Campagnoli Chiara\\ Lagni Luca}
+\title{RASD}
+\frontmatter                            % only in book class (roman page #s)
+\maketitle                              % Print title page.
+\tableofcontents                        % Print table of contents
+\mainmatter   
+
+\part{Introduction}
+
+\chapter{Pourpouses}
+In this chapter we will deline all the goals that we have extract from our text and the actors that take part
+in the system and the environment of our application.
+
+\section{Goals}
+
+\begin{itemize}
+\item (G03): Every client can decide what path to do, inside a city or a region.
+\item (G04): Every client can decide what mean of transports would take, according to the ones provided by the software.
+\item (G05): Every client can decide the range of time to reserve for breaks. 
+\item (G06): The system must comunicate to the client that a path (selected by this one) is not reachable or it's out of time.
+\item (G08): The system must provide all the possible path that can be taken by a client, according to his/her needed.
+\item (G10): The system must provide the most optimized and suitable solution , according to the client constraint, as first suggested path.
+\item (G11): The system must provide informations about problems/strikes for all the means of transports included in the software.
+\item (G12): The system must warning the client of weather problems concerning some means of transport.
+\item (G15): The system must provide a way to permit to a single client to buy a ticket for public transports.
+\item (G16): The system must provide the nearest location of a bike provided by a bike sharing service provider included in the software.
+\item (G17): The system must provide the nearest location of a car provided by a car shering service provider included on the software.
+\item (G18): The system must avoid overlaps in client's scheduled travels.
+\item (G19): The system must allow the client to create different types of meeting (at least, business meetings).
+\item (G20): The system must warning the user about upcoming meetings.
+\item (G22): The system must allow the user to delete a path.
+\item (G26): The system must provide an alternative path in case of problems along the path selected.
+\item (G29): The system must interface for wearable devices, providing maps or , at least , messagges.
+\item (G01): The software should show to each user, if possible, the the combination of means of transport that minimize the carbon footprint, according to the path selected and the required time.
+
+\end{itemize}
+
+\section{Actors}
+\begin{itemize}
+
+\item (A01): User - A generic actor that uses the application.
+\item (A03): Techical Support - Actor that aid the user in case of techical problems with the app.
+
+\end{itemize}
+
+\section{Agents}
+
+This application purpouse is to aim clients for short travels, so we limited our means of transport in:
+
+\begin{itemize}
+
+\item (M01): Feet 
+\item (M02): Personal bike 
+\item (M03): Personal car
+\item (M04): Other autonomous personal means of transport
+\item (M05): Other non autonomous personal means of transport
+\item (M06): Bike provided by a bike sharing provider, if available
+\item (M07): Car provided by a car sharing provider, if available
+\item (M08): Other non autonomoys means of transport???
+\item (M09): Other autonomous means of transport
+\item (M10): Trains
+\item (M11): Trams
+\item (M12): Bus 
+\item (M13): Taxi
+\item (M14): Boat (for cities like Venice).
+
+\end{itemize}
+
+We can exclude planes, because of the nature of the travels considered.\\
+
+Other autonomous personal means of transport can be everything that has an engine like motorcycles , quad, segway ...\\
+
+Other non autonomous personal means of transport can be everything, used for move from one place to another, that hasn't an engine like rollerblade, skateboards ...\\
+
+Other non autonomous means of transport can be tandems ... \\
+
+Other autonomous means of transport can be rented vehicles like motorcycles , cars not provided by a carsharing but also hichkicking and so on ... \\
+
+For all the "other [...] means of transport" we don't provide a specialized definition, we only focus of maximum speed, euro class and possible special access/limitations (like for veichles disposed for disable people), that we assume mandatory (the client must provided this kind of informations if he intended to use this kind of veichles), if the user want to properly use this application, and we leave the possibility to enrich informations about other important things of that mean of transport to the user it self.\\ 
+
+
+\section{Stakeholders}
+\begin{itemize}
+
+\item (S01): Owing compaany - Obviously, the company itself is a stakeholder
+\item (S02): External company - A general company that provides means of transport or services.
+\item (S03): Google
+\item (S04): ATM
+\item (S05): MObike 
+\item ...
+
+\end{itemize}
+
+We can assume that another possible stakeholder could be the city (or region) itself because the local comunity can be interested in invest resources for reduce traffic and pollution.\\
+
+At a higer level, for the same reasons , another possible stakeholder could be the governament (for the same reasons exposed before).
+
+\section{Scope}
+
+The applications requires a coverage of a city of a region but it doesn't specify which one so , we have to assume that this application should be able to manage his duty for any city or region of Italy (this is a limitation that we had to implement because it could be very hard to manage all public transport of the whole World).\\
+
+The client's scope is tought as limited and personal , we haven't provided group solutions (like trips for schools or something like that).
+
+\part{Overall Description}
+
+\chapter{Domain Guide Lines}
+In this chapter we will deline all those aspects that can be used to model our application for a future implementation
+
+\section{Product Functions}
+Here we include the most important requirements of our software
+
+\begin{itemize}
+
+\item (F01): The software must be accessed on all majors mobile devices that runs Android Os, iOS and Windows Phone.
+\item (F09): The software must interface with all major public transport companies that provides API.
+\item (F10): The software must allow the user to define a path.???
+\item (F11): The software must allow the user to define a journey (a path with some breaks).
+\item (F12): The software must allow the user to define time constraint to a specific selected path/journey.
+\item (F13): For each path/journey the software must provide all the available means of transport that can be used, according to the software interfaces.
+\item (F14): The software must allow the user to select veichles that he/she wants to use to do the travel.
+\item (F17): For each break, the software must require the estimated time.
+\item (F19): If a journey or a break is not possible , the software must inform the user.
+\item (F21): The software must provide all the available solutions, according to its setups, to carry the user from a place to another.
+\item (F22): In case of breaks, if they become too long (they reach the final time defined), the software must warning the user.
+
+\end{itemize}
+
+\chapter{Specific Requirements}
+
+\part{External Interface Requirements}
+
+\section{User Interfaces}
+The section above shows the main interfaces between the user and the app 
+\begin{itemize}
+\item (UI01): The user has to interface with the path selector of the app
+\item (UI02): The user has to interface with the navigator of the app.
+\item (UI04): The user has to be allowed to interface with the technical support.
+\item (UI05): The user has to be allowed to interface with the means of transport selection of the app.
+\item (UI06): The user has to be allowed to interface with external companies book methods via the app.
+\end{itemize}
+
+And, more , the application must provide support for disable users like:
+\begin{itemize}
+
+\item (UI07):Support for users that have low level limitations and, because of this condition, cannot access the application in the standard way (like people with low vision disease). 
+\item (UI08):Support for users that have high level limitation and , because of that, cannot use specific means of transport (like old people or people with movements limitation).
+
+\end{itemize}
+
+\section{Software Interface}
+This section shows the main interfaces between the application and the software provided by the user/client's device.
+
+\begin{itemize}
+\item (SI01): The application must interface with the localization device disposed by the client/user's device.
+\item (SI02): The application must interface with the system notification of the client/user's device.
+\item (SI03): The application must interface with the standard I/O ways of interaction of the client/user's device.
+\item (SI04): The application, in case of wearable device, must interface with the wearable device's notification system.
+\item (SI05): The application should interface with the system watch of the client's device.
+\item (SI06): The application should interface with the language selection of the system.
+\item (SI07): The application must provide, in addition to the standard GUI, a low and high contrast mode. 
+\item (SI08): The application must interface with external compalies API (those who are comtempled), in order to provide a way to access to transport's data.
+\item (SI09): The application must interface with some modules of the OS of the user/client's device.
+\end{itemize}
+
+\section{Hardware Interfaces}
+This section shows the main interfaces between the software or client/user or application and the hardware of the client/user's device
+
+\begin{itemize}
+\item (HI01): The client's device must access to the Internet.
+\item (HI02): The client's device must manage geolocalization. 
+\end{itemize}
+
+\section{Communication Interfaces}
+
+\begin{itemize}
+\item (MI01): The system must have a TCP/IP protocol.
+\item (MI02): The system must have a way to manage the GSM protocol.
+\item (MI03): In case of wearable devices , the system must have a way to manage the bluetooth protocol.
+\item (MI04): The user device must have a way to manage 3G or wi-fi protocols.
+\item (MI05): The user's device must have an I/O interface (like touch screens).
+\item (MI06): The communication between application and the user must have a Restful way .
+\end{itemize}
+
+\chapter{Other Infos}
+
+\part{Effort Spent}
+
+\section{Bolshakova Liubov}
+\begin{itemize}
+\item (2017/10/08 - 7.00h) : Studyied the assignments, delined main parts , defined some Section 1,2 e 3 requirements.
+\end{itemize}
+
+\section{Campagnoli Chiara}
+\begin{itemize}
+\item (2017/10/08 - 7.00h) : Studyied the assignments, delined main parts , defined some Section 1,2 e 3 requirements.
+\end{itemize}
+
+\section{Lagni Luca}
+\begin{itemize}
+\item (2017/10/08 - 7.00h) : Studyied the assignments, delined main parts , defined some Section 1,2 e 3 requirements.
+\item (2017/10/09 - 1.00h) : Created a tex RASD, writed down a first instance of section 1 and 2
+\item (2017/10/11 - 1.30h) : writed down a fist instance of section 3 concerning instances
+\item (2017/10/12 - 1.30h) : Created means of transport class UML , some RASD revirew and added section Effort Spent.
+\end{itemize}
+
+\end{document}

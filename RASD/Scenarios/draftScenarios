@@ -1,0 +1,50 @@
+S1) User creates a meeting
+    App computes fastest option: it's the car
+    User has his own car
+    
+S2) User creates a meeting
+    App computes: the meeting is unreachable on time
+    App warns the user
+    User postpones the meeting
+    
+S3) User creates a meeting
+    App computes fastest way: it's car
+    User is not in a hurry and wants to use the most ecological mean
+    App computes new option: it's bike
+    User has no bike, but a bike-sharing pass
+    App locates the closest bike
+    
+S4) User creates a meeting
+    User is underaged, so has deactivated car in preferences
+    App computes fastest way: it's bus
+    User has a monthly pass
+    
+S5) User creates a meeting
+    App computes: it's underground
+    User has no pass: app makes him buy ticket
+    
+S6) User has created five meetings today
+    User has set flexible lunch option
+    App computes fastest way of moving between every two meetings, including break
+    User can have 30 minutes of lunch at 13.20
+    -------------> warnign should be sent if not possible
+    
+S7)User has added "lunch" spot
+
+S8) User creates the meeting
+    App suggests him different types of way
+    User choose the bike-sharing way
+    App shows the nearest bikes location 
+    User chooses the bike location
+    App transfers him to bike-sharing service 
+    
+S9) Warning about strike
+    
+Use cases:
+- login (???)
+- create meeting
+- choose option to maximize
+- activate/deactivate mean
+- choose proposed option
+- set personal settings
+- buy ticket

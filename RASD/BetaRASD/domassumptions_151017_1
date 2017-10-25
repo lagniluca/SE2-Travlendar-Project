@@ -1,0 +1,15 @@
+Here we state the assumptions we made about the world interacting with the system:
+
+[DA01] The user will drive only if in possess of a valid driving licence and respecting the law of the country and the area.
+[DA02] Users subscribed to a vehicle-sharing service know and respect the rules of such service.
+[DA03] Only users subscribed to a vehicle-sharing service are able to drive vehicles of such service.
+[DA04] The user will use public transport only if in possess of a valid ticket or travel pass and is aware of sanctions applied by public transport companies.
+[DA05] The information inserted by the user on his profile is reliable and updated.
+[DA06] Users will not try to login using another user's credentials.
+[DA07] Every user can register to the system only once.
+[DA08] The position of the user is always available when using our system.
+[DA09] The information about the position of the user provided by the GPS is reliable.
+[DA10] The interacting companies, such as public transport companies, vehicle-sharing services, weather forecast services, agree on cooperating and offering the system the services it needs to work.
+[DA11] The information provided by companies of public transport (time-tables, ticket prices and anything related to possible problems of mobility, such as strikes, accidents or variations of path) are reliable.
+[DA12] The information provided by companies of vehicle-sharing services (location of vehicles, prices) are reliable.
+[DA13] The information provided by weather forecast services are reliable.
