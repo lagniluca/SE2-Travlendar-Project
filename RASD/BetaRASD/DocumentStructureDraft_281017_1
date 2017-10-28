@@ -1,0 +1,10 @@
+\section{Document Structure}
+
+This RASD is composed by 5 parts:
+
+\begin{enumerate}
+	\item Overall description: in this chapter we include further details about product functionalities, user characteristics, domain assumptions and constraints. In particular, we identify actors and stakeholders and involved means of transport, class diagrams and statecharts.
+	\item Specific requirements: in this chapter we include an overview about interfaces that will be needed, a set of possible scenarios and derived use cases, use cases diagrams and sequence and activity diagrams, more specific design constraints and non functional software attributes.
+	\item  Formal analysis using alloy: in this chapter we include our alloy model with the obtained results.
+	\item  Effort spent: in this chapter we include the amount of hours spent on the work by each group member.
+\end{enumerate}
