@@ -1,0 +1,21 @@
+\subsection{Integration and test}
+
+\subsubsection{Entry criteria}
+In order to begin the integration and test phase, the following assumptions must be valid:
+
+\begin{itemize}
+	\item The RASD and the previous sections of DD must be complete and correct
+	\item The database must be complete, configured and operating
+	\item The APIs of external companies collaborating with the system must be usable
+	\item The main functionalities of the server's components have been implemented and unit tested
+\end{itemize}
+
+\subsubsection{Integration testing strategy}
+We plan to test and integrate the components incrementally, as soon as they have been implemented and unit tested. As for the implementation, we plan to adopt a mainly bottom up strategy, although slight changes to this approach can be adopted if nit doesn't have to be strictly followed and small changes to this approach can be made, when needed.
+We also plan to adopt a critical module approach, testing first the modules which perform the main functionalities of the system.
+
+\subsubsection{Sequence of integration}
+As stated in the previous subsection, we will test the main functionalities of the system as soon as possible, which are the creation of meetings and the computation of trips. These are performed by the MeetingBuilder and the TripBuilder. However, the TripBuilder needs to retrieve the information from the collaborating external companies and the communication with those is managed by the ECManager. Assuming that the ECManager is fully working and able to provide reliable information from the external companies, the first two elements to be integrated are the ECManager and the TripBuilder, followed by the TripBuilder and the MeetingBuilder.\\
+In parallel, the integration of the PushGateway and the MeetingNotifier can be performed and, once the MeetingBuilder is integrated with the previous components, between MeetingNotifier and MeetingBuilder.\\
+The login and preference savings are functionalities we are thinking to add in a second phase: in fact, they are not strictly required for the functioning of the system, but we think they may be useful for security related issues and for a better user's fidelization. Therefore they don't need to be integrated at once and we preferred to give precedence to the components stated so far.\\
+The integration of these components with the router will then be performed and after this the server can be considered fully tested. We will then proceed with the integration of the database and, finally, the user.
