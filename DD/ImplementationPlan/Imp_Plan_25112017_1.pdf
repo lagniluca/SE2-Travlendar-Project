@@ -1,0 +1,41 @@
+\documentclass[a4paper,leqno]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{longtable} 
+\usepackage{multirow} 
+\usepackage{graphicx}
+\usepackage{algorithm2e}
+\usepackage{listings}
+
+\begin{document}
+	
+	
+	\date{2017/11/26}
+	\author{Bolshakova Liubov\\ Campagnoli Chiara\\ Lagni Luca}
+	\title{\textbf{\huge Travlendar+}\\ Design Document}
+
+
+\subsection{Implementation plan}
+
+\subsubsection{Identifying milestones and taskes}
+This section aims to point out some of the main concepts and principles according to which tasks and activities were born afterwards. During the development of the project our implementation team deals with the set of Stakeholders. In this set there are included at least one person to represent all the actors defined in RASD and, in particular, a possible User, Financial partners and Sponsors, possible members of the external partneship companies such as Trenord, ATM, Bike-Sharing and Car-sharing services, a possible ISP's member. As a result it will be possible to implement the system legally and fully integrate it with the external environment.
+
+Another topic to discuss is the importance of cost. Cost monitoring is always necessary and formulation of other strategies really depends on the budget and Sponsors and Partners' investments.
+
+There are some milestones during the liife cycle of the Project:
+\begin{itemize}
+	\item Implementation phase -- includes concrete implementation (abstract classes and interface development) and testing of the most important parts of the Project software.
+	\item Deployment phase -- it is the range of time that is necessary to prepare the Project to be potentially lauched into the market.
+	\item Maintenance phase -- includes revisioning the Project and its code, fixing bugs, which has not been distinguished during the testing, and further implementation according to precise scheme and first feedback from Users.
+\end{itemize}
+
+So it is crucial to develop the Project and update its releases with new interactive functionalities after Startup period to conform new tendencies and future. The methology of the Project implementation is Agile.
+
+\subsubsection{Schedule}
+In this section there is presented the schedule of Travlendar+ Project. It is a high-level general schedule that allows to make clear the main tasks and phases of the Project implementation.
+
+
+\end{document}
