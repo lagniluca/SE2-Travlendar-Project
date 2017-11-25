@@ -1,0 +1,43 @@
+\subsubsection{Entry criteria}
+In order to begin the integration phase, the following assumptions must be valid:
+
+\begin{itemize}
+	\item The RASD and the previous sections of DD must be complete and correct
+	\item The database must be complete, configured and operating
+	\item The APIs of external companies collaborating with the system must be usable
+	\item The classes of the model and their main functionalities have been implememnted and tested, as described in the previous sections.
+\end{itemize}
+
+\subsubsection{Integration testing strategy}
+We plan to integrate the components incrementally, as soon as they have been implemented and unit tested. As for the implementation, we plan to adopt a mainly bottom up strategy, although it doesn't have to be strictly followed and small changes to this approach can be made, when needed.
+We also plan to adopt a critical module approach, testing first the modules which perform the main functionalities of the system.
+
+\subsubsection{Sequence of integration}
+As stated in the previous subsection, we will test the main functionalities of the system as soon as possible, which are the creation of meetings and the computation of trips. The communication with external companies is considered a critical operation as well, as it is fundamental for the computation of trips and therefore the creation of meetings.\\
+We will first focus on the integration of all components of the server within each other and, once this phase is complete, we will proceed with the integration with the external server, the database and, finally, the user.\\
+
+
+
+\begin{enumerate}
+	\item BreakController --> Model\\
+	      NavigationController --> Model
+	\item TripController --> BreakController, NavigationController, Model
+	\item MeetingController --> Model
+	\item PathRestrictionController, NotificationManagerController, MeanOfTransportController --> Model
+	\item ExternalCompanyController --> PathRestrictionController, NotificationManagerController, Model
+	\item ExternalMeanOfTransportCompanyController --> NotificationManagerController, MeanOfTransportController, Model
+	\item UserDeviceController --> Model
+	\item LoginController --> Model
+	\item UserPreferencesController --> Model
+	\item APIManager --> ExternalCompanyController, ExternalMeanOfTransportCompanyController
+	\item UserController --> MeetingController, TripController, UserDeviceController, LoginController, UserPreferencesController, Model
+	\item ConnectionHandler --> UserController
+\end{enumerate}
+
+At this point, all the elements of the server will be integrated.
+\begin{enumerate}
+	\item ExternalServers --> APIManager
+	\item Model --> GMSGateway, PushGateway
+	\item Model --> Database
+	\item User's MobileApp --> ConnectionHandler
+\end{enumerate}
