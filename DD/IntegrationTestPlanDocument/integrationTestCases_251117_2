@@ -1,0 +1,236 @@
+\subsubsection{Integration test cases}
+
+\paragraph{Test case IS1.T1}
+\begin{itemize}
+	\item Test items: BreakController -> Model
+	\item Input specifications: break creation request from the TripController
+	\item Output specifications: a new Break is correctly created
+	\item Description/purpose: the BreakController sends to the Model the specifications about the break the user wants to create. The model sends back the confirm of the creation, or an error message in case the break was unfeasible.
+	\item Dependencies: TripController driver
+\end{itemize}
+
+\paragraph{Test case IS1.T2}
+\begin{itemize}
+	\item Test items: NavigatorController -> Model
+	\item Input specifications: the user selects a trip to add to his route
+	\item Output specifications: the trip is correctly added in the model
+	\item Description/purpose: the NavigatorController receives from the TripController the request from a user to select a trip among proposed ones. The selected trip in the navigator is updated and the Model notifies the NavigatorController
+	\item Dependencies: TripController driver
+\end{itemize}
+
+\paragraph{Test case IS2.T1}
+\begin{itemize}
+	\item Test items: TripController -> BreakController
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose:
+	\item Dependencies: TripController driver
+\end{itemize}
+
+\paragraph{Test case IS2.T2}
+\begin{itemize}
+	\item Test items: TripController -> NavigatorController
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS2.T3}
+\begin{itemize}
+	\item Test items: TripController -> Model
+	\item Input specifications: 
+	\item Output specifications: 
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS3.T1}
+\begin{itemize}
+	\item Test items: MeetingController -> Model
+	\item Input specifications: a meeting creation request is forwarded by the UserController
+	\item Output specifications: a new meeting is correctly scheduled
+	\item Description/purpose: the MeetingController sends to the Model the specifications about the meeting the user wants to create. The Model sends back the confirm of the meeting creation, or an error message in case it was unfeasible
+	\item Dependencies: UserController driver
+\end{itemize}
+
+\paragraph{Test case IS4.T1}
+\begin{itemize}
+	\item Test items: PathRestrictionController -> Model
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS4.T2}
+\begin{itemize}
+	\item Test items: NotificationManagerController -> Model
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS4.T3}
+\begin{itemize}
+	\item Test items: MeanOftransportController -> Model
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS5.T1}
+\begin{itemize}
+	\item Test items: ExternalCompanyController -> PathRestrictionController
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS5.T2}
+\begin{itemize}
+	\item Test items: ExternalCompanyController -> NotificationManagerController
+	\item Input specifications: a notification about bad weather conditions comes from an external company 
+	\item Output specifications: the message is correctly handled from the ExternalCompanyController to the NotificationManager
+	\item Description/purpose: this test case is an important step in the correct communication with external companies in case a problem that may affect the computation of routes occurs (for example bad weather conditions)
+	\item Dependencies: APIManager driver
+\end{itemize}
+
+\paragraph{Test case IS5.T3}
+\begin{itemize}
+	\item Test items: ExternalCompanyController -> Model
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS6.T1}
+\begin{itemize}
+	\item Test items: ExternalMeanOfTransportCompanyController -> NotificationManagerController
+	\item Input specifications: a notification about a strike comes from an external company 
+	\item Output specifications: the message is correctly handled from the ExternalMeanOfTransportCompanyController to the NotificationManager
+	\item Description/purpose: like test case IS5.T1, this test case is an important step in the correct communication with external companies in case a problem that may affect the computation of routes occurs
+	\item Dependencies: APIManager driver
+\end{itemize}
+
+\paragraph{Test case IS6.T2}
+\begin{itemize}
+	\item Test items: ExternalMeanOfTransportCompanyController -> MeanOfTRansportController
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS6.T3}
+\begin{itemize}
+	\item Test items: ExternalMeanOfTransportCompanyController -> Model
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+\paragraph{Test case IS7.T1}
+\begin{itemize}
+	\item Test items: UserDeviceController -> Model
+	\item Input specifications:
+	\item Output specifications:
+	\item Description/purpose
+	\item Dependencies:
+\end{itemize}
+
+
+\paragraph{Test case IS8.T1}
+\begin{itemize}
+	\item Test items: LoginController -> Model
+	\item Input specifications: a login request from the user is forwarded from the UserController
+	\item Output specifications: the user is granted access to his account, or denied if wrong data was inserted
+	\item Description/purpose: this test case is important for granting the security of users' data
+	\item Dependencies: Database stub, UserController driver
+\end{itemize}
+
+\paragraph{Test case IS9}
+\begin{itemize}
+	\item Test items: UserPreferencesController -> Model
+	\item Input specifications: a request from the user to set the trip's preferences is forwarded from the UserController
+	\item Output specifications: preferences are correctly set
+	\item Description/purpose: this case tests the functionality of allowing the setting of preferences and constraints for a route, for example preferable or unwanted travel means
+	\item Dependencies: UserController device
+\end{itemize}
+
+\paragraph{Test case IS10.T1}
+\begin{itemize}
+	\item Test items: APIManager -> ExternalCompanyController
+	\item Input specifications: request of maps from an external company for the trip computation
+	\item Output specifications: the request is correctly sent to the APIManager (and then to external servers) and the maps are sent back
+	\item Description/purpose: test the correct interaction with external companies' servers
+	\item Dependencies: External server driver, Model stub
+\end{itemize}
+
+\paragraph{Test case IS10.T2}
+\begin{itemize}
+	\item Test items: APIManager -> ExternalMeanOfTransportCompanyController
+	\item Input specifications:the user has selected the online purchase of a public transport ticket
+	\item Output specifications: redirection to the right company's site
+	\item Description/purpose: test the correct interaction with external mean of transport companies' servers
+	\item Dependencies: Model stub, External server driver
+\end{itemize}
+
+\paragraph{Test case IS11.T1}
+\begin{itemize}
+	\item Test items: UserController -> MeetingController
+	\item Input specifications: incoming message involving meeting
+	\item Output specifications: the message is correctly sorted into the MeetingController
+	\item Description/purpose: test the correct sorting of incoming messages
+	\item Dependencies: ConnectionHandler driver
+\end{itemize}
+
+\paragraph{Test case IS11.T2}
+\begin{itemize}
+	\item Test items: UserController -> TripController
+	\item Input specifications: incoming message involving trip
+	\item Output specifications: the message is correctly sorted into the TripController
+	\item Description/purpose: test the correct sorting of incoming messages
+	\item Dependencies: ConnectionHandler driver
+\end{itemize}
+
+\paragraph{Test case IS11.T3}
+\begin{itemize}
+	\item Test items: UserController -> UserDeviceController
+	\item Input specifications: incoming message involving ???
+	\item Output specifications: the message is correctly sorted into the UserDeviceController
+	\item Description/purpose: test the correct sorting of incoming messages
+	\item Dependencies: ConnectionHandler driver 
+\end{itemize}
+
+\paragraph{Test case IS11.T4}
+\begin{itemize}
+	\item Test items: UserController -> LoginController
+	\item Input specifications: incoming message involving access or registration
+	\item Output specifications: the message is correctly sorted into the LoginController
+	\item Description/purpose: test the correct sorting of incoming messages
+	\item Dependencies: ConnectionHandler driver
+\end{itemize}
+
+\paragraph{Test case IS11.T5}
+\begin{itemize}
+	\item Test items: UserController -> UserPreferencesController
+	\item Input specifications: incoming message involving user's preferences
+	\item Output specifications: the message is correctly sorted into the UserPreferencesController
+\item Description/purpose: test the correct sorting of incoming messages
+\item Dependencies: ConnectionHandler driver 
+\end{itemize}
+
+\paragraph{Test case IS12.T1}
+\begin{itemize}
+	\item Test items: ConnectionHandler -> UserController
+	\item Input specifications: a message from the user's Mobile Application reaches the ConnectionHandler
+	\item Output specifications: the message is correctly handled from the ConnectionHandler to the UserController
+	\item Description/purpose: test the correct communication between the reception of messages from the Mobile Application and the components that sortes them to the right controller
+	\item Dependencies: none
+\end{itemize}
