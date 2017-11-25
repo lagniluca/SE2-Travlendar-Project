@@ -11,19 +11,49 @@
 \contentsline {subsection}{\numberline {2.3}Deployment view}{7}
 \contentsline {subsection}{\numberline {2.4}Runtime view}{8}
 \contentsline {subsubsection}{\numberline {2.4.1}Meeting creation}{8}
-\contentsline {subsubsection}{\numberline {2.4.2}Vehicle sharing reservation and ticket purchase}{9}
-\contentsline {subsection}{\numberline {2.5}Component Interfaces}{10}
-\contentsline {subsection}{\numberline {2.6}Selected architectural styles and patterns}{10}
-\contentsline {subsection}{\numberline {2.7}Other design decisions}{10}
-\contentsline {section}{\numberline {3}Algorithm design}{11}
-\contentsline {section}{\numberline {4}User interface design}{12}
-\contentsline {section}{\numberline {5}Requirements traceability}{14}
-\contentsline {section}{\numberline {6}Implementation, integration and test plan}{17}
-\contentsline {subsection}{\numberline {6.1}Integration and test}{17}
-\contentsline {subsubsection}{\numberline {6.1.1}Entry criteria}{17}
-\contentsline {subsubsection}{\numberline {6.1.2}Integration testing strategy}{17}
-\contentsline {subsubsection}{\numberline {6.1.3}Sequence of integration}{17}
-\contentsline {section}{\numberline {7}Effort spent}{18}
-\contentsline {subsection}{\numberline {7.1}Bolshakova Liubov}{18}
-\contentsline {subsection}{\numberline {7.2}Campagnoli Chiara}{18}
-\contentsline {subsection}{\numberline {7.3}Lagni Luca}{18}
+\contentsline {subsubsection}{\numberline {2.4.2}Vehicle sharing reservation and ticket purchase}{10}
+\contentsline {subsection}{\numberline {2.5}Component Interfaces}{11}
+\contentsline {subsection}{\numberline {2.6}Selected architectural styles and patterns}{11}
+\contentsline {subsection}{\numberline {2.7}Other design decisions}{11}
+\contentsline {section}{\numberline {3}Algorithm design}{12}
+\contentsline {section}{\numberline {4}User interface design}{13}
+\contentsline {section}{\numberline {5}Requirements traceability}{15}
+\contentsline {section}{\numberline {6}Implementation, integration and test plan}{22}
+\contentsline {subsection}{\numberline {6.1}Implementation plan}{22}
+\contentsline {subsubsection}{\numberline {6.1.1}Identifying milestones and taskes}{22}
+\contentsline {subsubsection}{\numberline {6.1.2}Schedule}{22}
+\contentsline {subsection}{\numberline {6.2}Integration and test}{24}
+\contentsline {subsubsection}{\numberline {6.2.1}Entry criteria}{24}
+\contentsline {subsubsection}{\numberline {6.2.2}Integration testing strategy}{24}
+\contentsline {subsubsection}{\numberline {6.2.3}Sequence of integration}{24}
+\contentsline {subsubsection}{\numberline {6.2.4}Integration test cases}{25}
+\contentsline {paragraph}{Test case IS1.T1}{25}
+\contentsline {paragraph}{Test case IS1.T2}{25}
+\contentsline {paragraph}{Test case IS2.T1}{26}
+\contentsline {paragraph}{Test case IS2.T2}{26}
+\contentsline {paragraph}{Test case IS2.T3}{26}
+\contentsline {paragraph}{Test case IS3.T1}{26}
+\contentsline {paragraph}{Test case IS4.T1}{27}
+\contentsline {paragraph}{Test case IS4.T2}{27}
+\contentsline {paragraph}{Test case IS4.T3}{27}
+\contentsline {paragraph}{Test case IS5.T1}{27}
+\contentsline {paragraph}{Test case IS5.T2}{28}
+\contentsline {paragraph}{Test case IS5.T3}{28}
+\contentsline {paragraph}{Test case IS6.T1}{28}
+\contentsline {paragraph}{Test case IS6.T2}{28}
+\contentsline {paragraph}{Test case IS6.T3}{29}
+\contentsline {paragraph}{Test case IS7.T1}{29}
+\contentsline {paragraph}{Test case IS8.T1}{29}
+\contentsline {paragraph}{Test case IS9}{29}
+\contentsline {paragraph}{Test case IS10.T1}{30}
+\contentsline {paragraph}{Test case IS10.T2}{30}
+\contentsline {paragraph}{Test case IS11.T1}{30}
+\contentsline {paragraph}{Test case IS11.T2}{30}
+\contentsline {paragraph}{Test case IS11.T3}{31}
+\contentsline {paragraph}{Test case IS11.T4}{31}
+\contentsline {paragraph}{Test case IS11.T5}{31}
+\contentsline {paragraph}{Test case IS12.T1}{31}
+\contentsline {section}{\numberline {7}Effort spent}{32}
+\contentsline {subsection}{\numberline {7.1}Bolshakova Liubov}{32}
+\contentsline {subsection}{\numberline {7.2}Campagnoli Chiara}{32}
+\contentsline {subsection}{\numberline {7.3}Lagni Luca}{32}
